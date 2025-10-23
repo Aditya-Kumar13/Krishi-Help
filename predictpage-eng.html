@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="predictstyle.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar">
+            <div class="logo">
+                <div class="nav1">
+                    <h2 style="margin-left: 2vw; font-size: xx-large; padding-top: 2%;">
+                        <span style="color: orange;" >कृषि</span><span style="color: green;">Help</span>
+                    </h2>
+                </div>
+                <div class="nav12 " style="padding-left: 2%;">
+                    <h4>AI POWERED CROP</h4>
+                    <h4>YIELD PRIDICTOR</h4>
+                </div>
+            </div>
+            <div class="nav2">
+                <select id="about" style="font-size: 1rem;  padding-top: 0.8%; padding-bottom: 0.8%; border-top-right-radius:5%; border: transparent; width: 5.8vw;">
+                    <option value="" selected disabled hidden>ABOUT</option>
+                    <option value="Odisha">Our Team Member</option>
+                    <option value="Uttar Pradesh">Developer</option>
+                    
+                </select>
+                <select id="news" style="font-size: 1rem;  padding-top: 0.8%; padding-bottom: 0.8%; border-top-right-radius:5%; border: transparent;">
+                    <option value="" selected disabled hidden>NEWS AND EVENTS</option>
+                    <option value="Odisha">Our Team Member</option>
+                    <option value="Uttar Pradesh">Developer</option>
+                    
+                </select>
+                <select id="resources" style="font-size: 1rem;  padding-top: 0.8%; padding-bottom: 0.8%; border-top-right-radius:5%; border: transparent;width: 9vw;">
+                    <option value="" selected disabled hidden>RESOURCES</option>
+                    <option value="Odisha">Our Team Member</option>
+                    <option value="Uttar Pradesh">Developer</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="pictemp">
+            
+        </div>
+        <div class="predictpagemsg">
+            <p >We are building an AI-powered crop yield prediction platform designed to empower farmers, agribusinesses, and policymakers with accurate, data-driven insights. By combining historical agricultural data, weather forecasts, soil health parameters, and satellite imagery, our system predicts crop yields with high precision.</p>
+        </div>
+
+        
+        <div class="predictmain">
+            <div class="box">
+                <div class="mainbox">
+                    <br>
+                    <br>
+                    <br>
+                    <div class="box1" style="text-align: center; "><h1>Predictor</h1></div>
+                    <br>
+                    <br>
+                    <br>
+                    <div class="box2" style="display: flex; justify-content: space-between; align-items: center; margin: 0 10%; ">
+                        <div class="box21">
+                            <p style="font-size: 1.5rem; width: 40%;">State Name</p>
+                            <select id="State" required style="font-size: 1rem; width: 35vw; padding-top: 0.8%; padding-bottom: 0.8%; border-top-right-radius:5%; border-radius: 10px; padding: 3%;">
+                                <option value="" selected disabled hidden">Select State...</option>
+                                <option value="Odisha">Odisha</option>
+                                <option value="Uttar Pradesh">Uttar Pradesh</option>
+                                <option value="Bihar">Bihar</option>
+                            </select>
+                        </div>
+                        <div class="box22">
+                            <p style="font-size: 1.5rem; width: 40%;">District</p>
+                            <select id="district" required style="font-size: 1rem;width: 35vw; padding: 3%; padding-top: 3%; padding-bottom: 3%;border-radius: 10px; ">
+                                <option value="" selected disabled hidden>Choose a District.....</option>
+                                <option value="Odisha">Ganjam</option>
+                                <option value="Uttar Pradesh">Khordha</option>
+                                <option value="Bihar">Mayurbhanj</option>
+                                <option value="Uttar Pradesh">Cuttack</option>
+                                <option value="Bihar">Sambalpur</option>
+                            </select>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="box3" style="margin: 0 10%;">
+                        <p style="font-size: 1.5rem; ">Type of Crop</p>
+                        <select id="Crop" required style="font-size: 1rem; padding-right: 30%; padding-top: 1.5%; border-radius: 10px; padding-bottom: 1.5%; padding-right: 88.5%; padding-left: 1.5%;
+                        ">
+                            <option value="" selected disabled hidden >Choose Crop</option>
+                            <option value="Wheat">Wheat</option>
+                            <option value="Maize">Paddy</option>
+                            <option value="Rice">Maize</option>
+                        </select>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="box4" style="margin: 0 10%;">
+                        <p style="font-size: 1rem; padding-top: 0.5%; padding-bottom: 0.5%;">Enter Area </p>
+                        <input type="number" id="area" required placeholder="Enter Area in acres" style="font-size: 1.5rem; border-radius: 10px; padding-right: 73.1%;padding-top: 1.1%; padding-bottom: 1.1%; padding-left: 1.5%;">
+                    </div>
+                    <br>
+                    <br>
+                    <div class="box5" style="display: flex; justify-content: center;">
+                        <button id="predictbtn" >PREDICT</button>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+                
+            </div>
+            
+        </div>
+        <!-- Help Bot -->
+<style>
+  #helpbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+  }
+  #helpbot button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  #chatbox {
+    display: none;
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 320px;
+    max-height: 450px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+  }
+  #chatbox header {
+    background: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+  }
+  #chatcontent {
+    padding: 10px;
+    max-height: 340px;
+    overflow-y: auto;
+  }
+  .faq {
+    background: #f1f1f1;
+    margin: 6px 0;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .faq:hover {
+    background: #e0e0e0;
+  }
+  .answer {
+    background: #e8f5e9;
+    margin: 4px 0 8px 0;
+    padding: 8px;
+    border-radius: 8px;
+  }
+  #langswitch {
+    text-align: center;
+    margin: 6px 0;
+  }
+  #langswitch button {
+    margin: 2px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  #langswitch button.active {
+    background: #4CAF50;
+    color: white;
+  }
+</style>
+
+<div id="helpbot">
+  <button onclick="toggleChat()">💬</button>
+</div>
+
+<div id="chatbox">
+  <header>Help Bot</header>
+  <div id="langswitch">
+    <button id="enBtn" class="active" onclick="setLang('en')">English</button>
+    <button id="orBtn" onclick="setLang('or')">ଓଡ଼ିଆ</button>
+  </div>
+  <div id="chatcontent"></div>
+</div>
+
+<script>
+const faqs = {
+  en: [
+    {
+      q: "How can I protect my crops from pests and diseases?",
+      a: "1) Use resistant seed varieties.\n2) Inspect fields regularly.\n3) Apply cultural practices like removing weeds and keeping fields clean.\n4) Use biological control (e.g., neem, Trichoderma).\n5) Spray pesticides only when pest levels are high, and follow instructions carefully."
+    },
+    {
+      q: "How can I improve the fertility of my soil?",
+      a: "1) Apply farmyard manure or compost.\n2) Use crop rotation and legumes to fix nitrogen.\n3) Apply fertilizers based on soil test results.\n4) Avoid overuse of chemicals.\n5) Add organic matter regularly."
+    },
+    {
+      q: "Which crops are best suited for different soil and climate conditions?",
+      a: "1) Sandy soil → Groundnut, Watermelon.\n2) Clay soil → Paddy, Wheat.\n3) Loamy soil → Most vegetables and cereals.\n4) Dry climate → Millet, Sorghum.\n5) Humid climate → Rice, Jute."
+    },
+    {
+      q: "What practices can help me increase crop yield sustainably?",
+      a: "1) Use good quality seeds.\n2) Apply balanced fertilizers.\n3) Practice Integrated Pest Management (IPM).\n4) Ensure proper irrigation.\n5) Follow recommended planting time and spacing."
+    },
+    {
+      q: "What are effective methods to control weeds in my field?",
+      a: "1) Manual weeding at early stage.\n2) Mulching to suppress weeds.\n3) Timely irrigation.\n4) Crop rotation to break weed cycle.\n5) Use of safe herbicides if necessary."
+    }
+  ],
+  or: [
+    {
+      q: "ମୋର ଫସଲକୁ କିପରି ପୋକା ଏବଂ ରୋଗରୁ ସୁରକ୍ଷା କରିବି?",
+      a: "୧) ପୋକା-ରୋଗ ପ୍ରତିରୋଧକ ବୀଜ ବ୍ୟବହାର କରନ୍ତୁ ।\n୨) ନିୟମିତ ଭାବରେ ମାଣ୍ଡିଆ ଯାଞ୍ଚ କରନ୍ତୁ ।\n୩) ଜୁଆ ହଟାଇବା ଏବଂ କ୍ଷେତ୍ର ସଫା ରଖନ୍ତୁ ।\n୪) ନୀମ୍, ଟ୍ରାଇକୋଡର୍ମା ପରି ଜୀବାଣୁ ନିୟନ୍ତ୍ରଣ କରନ୍ତୁ ।\n୫) ପୋକା ବହୁତ ବଢିଲେମାତ୍ରେ ବିଷାଳୁ ଦ୍ରବ୍ୟ ବ୍ୟବହାର କରନ୍ତୁ ।"
+    },
+    {
+      q: "ମୋର ମାଟିର ଉର୍ବରତା କିପରି ବଢାଇବି?",
+      a: "୧) ଗୋବରଖାଦ୍ୟ ବା କମ୍ପୋଷ୍ଟ ଦିଅନ୍ତୁ ।\n୨) ଡାଲିଶସ୍ୟ ସହିତ ଫସଲ ପରିବର୍ତ୍ତନ କରନ୍ତୁ ।\n୩) ମାଟି ପରୀକ୍ଷା ଅନୁଯାୟୀ ସାର ବ୍ୟବହାର କରନ୍ତୁ ।\n୪) ରାସାୟନିକ ସାରର ଅଧିକ ପ୍ରୟୋଗ ବନ୍ଦ କରନ୍ତୁ ।\n୫) ନିୟମିତ ଭାବରେ ସଜିବାଜାତୀୟ ପଦାର୍ଥ ଯୋଗ କରନ୍ତୁ ।"
+    },
+    {
+      q: "ଭିନ୍ନ ମାଟି ଏବଂ ଜଳବାୟୁରେ କେଉଁ ଫସଲ ଭଲ?",
+      a: "୧) ବାଲୁକାମୟ ମାଟି → ବଦାମ, ତରଭୁଜ ।\n୨) ଦୋଆସଲି ମାଟି → ପaddy, ଗହମ ।\n୩) ଦୋଆମାଟି → ସବୁଜି, ଧାନ୍ୟ ।\n୪) ଶୁଷ୍କ ଜଳବାୟୁ → ଜୌନ, ଜୁଆର୍ ।\n୫) ଆର୍ଦ୍ର ଜଳବାୟୁ → ଧାନ, ଜୁଟ୍ ।"
+    },
+    {
+      q: "ସ୍ଥାୟୀଭାବରେ ଫସଲ ଉତ୍ପାଦନ କିପରି ବଢାଇପାରିବି?",
+      a: "୧) ଭଲ ବୀଜ ବ୍ୟବହାର କରନ୍ତୁ ।\n୨) ସମତୋଳ ସାର ବ୍ୟବହାର କରନ୍ତୁ ।\n୩) ସମ୍ମିଳିତ ପୋକାନିୟନ୍ତ୍ରଣ ପ୍ରଣାଳୀ (IPM) ଅନୁସରଣ କରନ୍ତୁ ।\n୪) ଠିକ୍ ସମୟରେ ସିଚାଇ କରନ୍ତୁ ।\n୫) ସଠିକ ଚାଷ ମାତ୍ରା ଓ ଦୂରତା ରଖନ୍ତୁ ।"
+    },
+    {
+      q: "ମୋର କ୍ଷେତରେ ଘାସକୁ କିପରି ନିୟନ୍ତ୍ରଣ କରିବି?",
+      a: "୧) ଆରମ୍ଭରେ ହାତରେ ଘାସ କାଟନ୍ତୁ ।\n୨) ମାଲ୍ଚିଙ୍ଗ କରି ଘାସ ଦମନ କରନ୍ତୁ ।\n୩) ସମୟମାନ୍ୟ ସିଚାଇ କରନ୍ତୁ ।\n୪) ଫସଲ ପରିବର୍ତ୍ତନ କରି ଘାସର ଚକ୍ର ଭାଙ୍ଗନ୍ତୁ ।\n୫) ପ୍ରୟୋଜନରେ ସୁରକ୍ଷିତ ଘାସନାଶକ ବ୍ୟବହାର କରନ୍ତୁ ।"
+    }
+  ]
+};
+
+let currentLang = 'en';
+
+function toggleChat() {
+  const box = document.getElementById('chatbox');
+  box.style.display = box.style.display === 'block' ? 'none' : 'block';
+  if (box.style.display === 'block') loadFaqs();
+}
+
+function setLang(lang) {
+  currentLang = lang;
+  document.getElementById('enBtn').classList.toggle('active', lang === 'en');
+  document.getElementById('orBtn').classList.toggle('active', lang === 'or');
+  loadFaqs();
+}
+
+function loadFaqs() {
+  const content = document.getElementById('chatcontent');
+  content.innerHTML = '';
+  faqs[currentLang].forEach((item, i) => {
+    const qDiv = document.createElement('div');
+    qDiv.className = 'faq';
+    qDiv.innerText = item.q;
+    qDiv.onclick = () => showAnswer(i);
+    content.appendChild(qDiv);
+  });
+}
+
+function showAnswer(i) {
+  const content = document.getElementById('chatcontent');
+  const ans = document.createElement('div');
+  ans.className = 'answer';
+  ans.innerText = faqs[currentLang][i].a;
+  content.appendChild(ans);
+  content.scrollTop = content.scrollHeight;
+}
+</script>
+<script src="scrip.js"></script>
+    </div>
+</body>
+</html>

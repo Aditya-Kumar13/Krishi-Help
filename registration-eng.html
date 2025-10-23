@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link href="styling.css" rel="stylesheet">
+</head>
+<body style="background-image: url('white-canvas-texture_707519-16698.jpg');">
+
+    <div class="container" style="display: flex; width: 100%; height: 100%;">
+        <div class="left" style="background-color: black;  ">
+            <img src="OIP.jpg" alt="img" style="height: 120%;" >
+            
+        </div>
+        <div class="right1" style="width: 50%; ">
+            <div class="mainbox">
+                <div class="logologin">
+                    <h1><span style="color: orange;">कृषि</span><span style="color: green;">Help</span></h1>
+                </div>
+                
+                <div class="signinlogin">
+                    <h2>SIGN UP</h2>
+                </div>
+                
+                <div class="ailogin" style="font-weight: lighter;">
+                    <p>Welcome To कृषिHelp AI</p>
+                </div>
+                
+                <div class="infoloin">
+                    <div class="inputnumber">
+                        <label for="phoneNumber" class="number"></label>
+                        <input
+                            type="tel"
+                            id="phoneNumber"
+                            name="phoneNumber"
+                            class="input-field"
+                            placeholder="Enter Your Mobile No."
+                            pattern="\+91\s?[0-9]{10}"
+                            title="Phone number must start with +91 and be followed by 10 digits"
+                            required/>
+                    </div>
+                    <div id="messageBox" class="message-box hidden"></div>
+                    <br>
+                    <div class="otp-container" style="background: #fff; padding: 1px; border-radius: 10px; box-shadow: 0 4px 8px rgba(61, 27, 231, 0.1); text-align: center;">
+                        <div class="input-fields" style="display: flex; justify-content: center; gap: 10px; margin: 20px 0;">
+                            <input type="text" maxlength="1" class="otp-input" id="otp-1" style="width: 40px; height: 40px; text-align: center; font-size: 1.2rem; border: 2px solid #ddd; border-radius: 5px;">
+                            <input type="text" maxlength="1" class="otp-input" id="otp-2" style="width: 40px; height: 40px; text-align: center; font-size: 1.2rem; border: 2px solid #ddd; border-radius: 5px;">
+                            <input type="text" maxlength="1" class="otp-input" id="otp-3" style="width: 40px; height: 40px; text-align: center; font-size: 1.2rem; border: 2px solid #ddd; border-radius: 5px;">
+                            <input type="text" maxlength="1" class="otp-input" id="otp-4" style="width: 40px; height: 40px; text-align: center; font-size: 1.2rem; border: 2px solid #ddd; border-radius: 5px;">
+                            <input type="text" maxlength="1" class="otp-input" id="otp-5" style="width: 40px; height: 40px; text-align: center; font-size: 1.2rem; border: 2px solid #ddd; border-radius: 5px;">
+                            <input type="text" maxlength="1" class="otp-input" id="otp-6" style="width: 40px; height: 40px; text-align: center; font-size: 1.2rem; border: 2px solid #ddd; border-radius: 5px;">
+                            <button id="verify-btn" style="padding: 10px 20px; border: none; background-color: #007bff; color: #fff; border-radius: 5px; cursor: pointer;">Verify OTP</button>
+                        </div>
+                        
+                        <p class="resend">Didn't receive the code? <a href="#">Resend</a></p>
+                        
+                    </div>
+                    
+                    <div class="password">
+                        <input type="password" placeholder="Enter password" style="width: 100%; padding: 0.75rem 1rem; border-width: 2px; border-radius: 0.5rem; border: 1px solid #e5e7eb;transition: all 0.3s ease;" id="logpass">
+                    </div>
+                    <br>
+                    <div class="password">
+                        <input type="password" placeholder="Enter password" style="width: 100%; padding: 0.75rem 1rem; border-width: 2px; border-radius: 0.5rem; border: 1px solid #e5e7eb;transition: all 0.3s ease;" id="logpass">
+                    </div>
+                    
+                    
+                </div>
+                <br>
+                <div class="signin" >
+                    <button style="width: 40%; font-size: 1.4rem; padding: 1.1% 1.1%; border-radius: 10px; background-color: Blue; color: white; font-weight: bolder;" >SIGNUP</button>
+                </div>
+                <br>
+                <div class="registerpage">
+                    <a href="login-english.html" style="color: black;">Login</a>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+    <script src="scrip.js"></script>
+</body>
+</html>

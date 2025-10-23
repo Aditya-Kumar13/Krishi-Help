@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Predictions</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: #f2f2f2 url("texture.png");
+      background-size: cover;
+      margin: 0;
+      padding: 40px;
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+      color: #0a2a66;
+      font-size: 2.2rem;
+      margin-bottom: 40px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .section {
+      max-width: 1000px;
+      margin: 0 auto 60px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: #fff;
+      border-radius: 20px;
+      padding: 30px;
+      text-align: center;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 12px 25px rgba(0,0,0,0.25);
+    }
+
+    .circle {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      background: #f9f9f9;
+      margin: 0 auto 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1rem;
+      font-weight: 500;
+      color: #111;
+      box-shadow: inset 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .label {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #0a0a0a;
+      margin-top: 10px;
+    }
+
+    .section-title {
+      text-align: left;
+      font-size: 1.5rem;
+      font-weight: bold;
+      margin-bottom: 20px;
+      color: #0a2a66;
+      border-left: 5px solid #0a2a66;
+      padding-left: 10px;
+    }
+  </style>
+</head>
+<body>
+  <h1>ଭବୀଷ୍ୟବାଣୀ</h1>
+
+  <!-- Main Predictions -->
+  <div class="section">
+    <div class="section-title">ମୁଖ୍ୟ ପୂର୍ବାନୁମାନଗୁଡିକ</div>
+    <div class="grid">
+      <div class="card">
+        <div class="circle">125.4 acre</div>
+        <div class="label">ଫଳନ</div>
+      </div>
+      <div class="card">
+        <div class="circle">Apply 2 inches<br>of water</div>
+        <div class="label">ପାଣି ପୂରଣ</div>
+      </div>
+      <div class="card">
+        <div class="circle">Chlorantraniliprole</div>
+        <div class="label">ପେସ୍ଟିସାଇଡସ୍</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Additional Info -->
+  <div class="section">
+    <div class="section-title">ଅତିରିକ୍ତ ତଥ୍ୟ</div>
+    <div class="grid">
+      <div class="card">
+        <div class="circle">23 °C</div>
+        <div class="label">ଆବହା</div>
+      </div>
+      <div class="card">
+        <div class="circle">Urea</div>
+        <div class="label">ଗୋଡ଼ିଜ</div>
+      </div>
+    </div>
+    <!-- Help Bot -->
+<style>
+  #helpbot {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 9999;
+  }
+  #helpbot button {
+    background: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+  }
+  #chatbox {
+    display: none;
+    position: fixed;
+    bottom: 90px;
+    right: 20px;
+    width: 320px;
+    max-height: 450px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+  }
+  #chatbox header {
+    background: #4CAF50;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    font-weight: bold;
+  }
+  #chatcontent {
+    padding: 10px;
+    max-height: 340px;
+    overflow-y: auto;
+  }
+  .faq {
+    background: #f1f1f1;
+    margin: 6px 0;
+    padding: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+  }
+  .faq:hover {
+    background: #e0e0e0;
+  }
+  .answer {
+    background: #e8f5e9;
+    margin: 4px 0 8px 0;
+    padding: 8px;
+    border-radius: 8px;
+  }
+  #langswitch {
+    text-align: center;
+    margin: 6px 0;
+  }
+  #langswitch button {
+    margin: 2px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  #langswitch button.active {
+    background: #4CAF50;
+    color: white;
+  }
+</style>
+
+<div id="helpbot">
+  <button onclick="toggleChat()">💬</button>
+</div>
+
+<div id="chatbox">
+  <header>Help Bot</header>
+  <div id="langswitch">
+    <button id="enBtn" class="active" onclick="setLang('en')">English</button>
+    <button id="orBtn" onclick="setLang('or')">ଓଡ଼ିଆ</button>
+  </div>
+  <div id="chatcontent"></div>
+</div>
+
+<script>
+const faqs = {
+  en: [
+    {
+      q: "How can I protect my crops from pests and diseases?",
+      a: "1) Use resistant seed varieties.\n2) Inspect fields regularly.\n3) Apply cultural practices like removing weeds and keeping fields clean.\n4) Use biological control (e.g., neem, Trichoderma).\n5) Spray pesticides only when pest levels are high, and follow instructions carefully."
+    },
+    {
+      q: "How can I improve the fertility of my soil?",
+      a: "1) Apply farmyard manure or compost.\n2) Use crop rotation and legumes to fix nitrogen.\n3) Apply fertilizers based on soil test results.\n4) Avoid overuse of chemicals.\n5) Add organic matter regularly."
+    },
+    {
+      q: "Which crops are best suited for different soil and climate conditions?",
+      a: "1) Sandy soil → Groundnut, Watermelon.\n2) Clay soil → Paddy, Wheat.\n3) Loamy soil → Most vegetables and cereals.\n4) Dry climate → Millet, Sorghum.\n5) Humid climate → Rice, Jute."
+    },
+    {
+      q: "What practices can help me increase crop yield sustainably?",
+      a: "1) Use good quality seeds.\n2) Apply balanced fertilizers.\n3) Practice Integrated Pest Management (IPM).\n4) Ensure proper irrigation.\n5) Follow recommended planting time and spacing."
+    },
+    {
+      q: "What are effective methods to control weeds in my field?",
+      a: "1) Manual weeding at early stage.\n2) Mulching to suppress weeds.\n3) Timely irrigation.\n4) Crop rotation to break weed cycle.\n5) Use of safe herbicides if necessary."
+    }
+  ],
+  or: [
+    {
+      q: "ମୋର ଫସଲକୁ କିପରି ପୋକା ଏବଂ ରୋଗରୁ ସୁରକ୍ଷା କରିବି?",
+      a: "୧) ପୋକା-ରୋଗ ପ୍ରତିରୋଧକ ବୀଜ ବ୍ୟବହାର କରନ୍ତୁ ।\n୨) ନିୟମିତ ଭାବରେ ମାଣ୍ଡିଆ ଯାଞ୍ଚ କରନ୍ତୁ ।\n୩) ଜୁଆ ହଟାଇବା ଏବଂ କ୍ଷେତ୍ର ସଫା ରଖନ୍ତୁ ।\n୪) ନୀମ୍, ଟ୍ରାଇକୋଡର୍ମା ପରି ଜୀବାଣୁ ନିୟନ୍ତ୍ରଣ କରନ୍ତୁ ।\n୫) ପୋକା ବହୁତ ବଢିଲେମାତ୍ରେ ବିଷାଳୁ ଦ୍ରବ୍ୟ ବ୍ୟବହାର କରନ୍ତୁ ।"
+    },
+    {
+      q: "ମୋର ମାଟିର ଉର୍ବରତା କିପରି ବଢାଇବି?",
+      a: "୧) ଗୋବରଖାଦ୍ୟ ବା କମ୍ପୋଷ୍ଟ ଦିଅନ୍ତୁ ।\n୨) ଡାଲିଶସ୍ୟ ସହିତ ଫସଲ ପରିବର୍ତ୍ତନ କରନ୍ତୁ ।\n୩) ମାଟି ପରୀକ୍ଷା ଅନୁଯାୟୀ ସାର ବ୍ୟବହାର କରନ୍ତୁ ।\n୪) ରାସାୟନିକ ସାରର ଅଧିକ ପ୍ରୟୋଗ ବନ୍ଦ କରନ୍ତୁ ।\n୫) ନିୟମିତ ଭାବରେ ସଜିବାଜାତୀୟ ପଦାର୍ଥ ଯୋଗ କରନ୍ତୁ ।"
+    },
+    {
+      q: "ଭିନ୍ନ ମାଟି ଏବଂ ଜଳବାୟୁରେ କେଉଁ ଫସଲ ଭଲ?",
+      a: "୧) ବାଲୁକାମୟ ମାଟି → ବଦାମ, ତରଭୁଜ ।\n୨) ଦୋଆସଲି ମାଟି → ପaddy, ଗହମ ।\n୩) ଦୋଆମାଟି → ସବୁଜି, ଧାନ୍ୟ ।\n୪) ଶୁଷ୍କ ଜଳବାୟୁ → ଜୌନ, ଜୁଆର୍ ।\n୫) ଆର୍ଦ୍ର ଜଳବାୟୁ → ଧାନ, ଜୁଟ୍ ।"
+    },
+    {
+      q: "ସ୍ଥାୟୀଭାବରେ ଫସଲ ଉତ୍ପାଦନ କିପରି ବଢାଇପାରିବି?",
+      a: "୧) ଭଲ ବୀଜ ବ୍ୟବହାର କରନ୍ତୁ ।\n୨) ସମତୋଳ ସାର ବ୍ୟବହାର କରନ୍ତୁ ।\n୩) ସମ୍ମିଳିତ ପୋକାନିୟନ୍ତ୍ରଣ ପ୍ରଣାଳୀ (IPM) ଅନୁସରଣ କରନ୍ତୁ ।\n୪) ଠିକ୍ ସମୟରେ ସିଚାଇ କରନ୍ତୁ ।\n୫) ସଠିକ ଚାଷ ମାତ୍ରା ଓ ଦୂରତା ରଖନ୍ତୁ ।"
+    },
+    {
+      q: "ମୋର କ୍ଷେତରେ ଘାସକୁ କିପରି ନିୟନ୍ତ୍ରଣ କରିବି?",
+      a: "୧) ଆରମ୍ଭରେ ହାତରେ ଘାସ କାଟନ୍ତୁ ।\n୨) ମାଲ୍ଚିଙ୍ଗ କରି ଘାସ ଦମନ କରନ୍ତୁ ।\n୩) ସମୟମାନ୍ୟ ସିଚାଇ କରନ୍ତୁ ।\n୪) ଫସଲ ପରିବର୍ତ୍ତନ କରି ଘାସର ଚକ୍ର ଭାଙ୍ଗନ୍ତୁ ।\n୫) ପ୍ରୟୋଜନରେ ସୁରକ୍ଷିତ ଘାସନାଶକ ବ୍ୟବହାର କରନ୍ତୁ ।"
+    }
+  ]
+};
+
+let currentLang = 'en';
+
+function toggleChat() {
+  const box = document.getElementById('chatbox');
+  box.style.display = box.style.display === 'block' ? 'none' : 'block';
+  if (box.style.display === 'block') loadFaqs();
+}
+
+function setLang(lang) {
+  currentLang = lang;
+  document.getElementById('enBtn').classList.toggle('active', lang === 'en');
+  document.getElementById('orBtn').classList.toggle('active', lang === 'or');
+  loadFaqs();
+}
+
+function loadFaqs() {
+  const content = document.getElementById('chatcontent');
+  content.innerHTML = '';
+  faqs[currentLang].forEach((item, i) => {
+    const qDiv = document.createElement('div');
+    qDiv.className = 'faq';
+    qDiv.innerText = item.q;
+    qDiv.onclick = () => showAnswer(i);
+    content.appendChild(qDiv);
+  });
+}
+
+function showAnswer(i) {
+  const content = document.getElementById('chatcontent');
+  const ans = document.createElement('div');
+  ans.className = 'answer';
+  ans.innerText = faqs[currentLang][i].a;
+  content.appendChild(ans);
+  content.scrollTop = content.scrollHeight;
+}
+</script>
+  </div>
+<script src="odia.js"></script>
+</body>
+</html>

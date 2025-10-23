@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KrishiHElp</title>
+    <link href="styling.css" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="photo">
+            
+        </div>
+        <br>
+        <div class="msg">
+            <h2 id="msghead">Welcome To <span>कृषि</span>Help</h2>
+            <p id="msgpara">KrishiHelp utilizes AI technology to predict crop yield, providing farmers with valuable insights to optimize their production and increase profitability. Our app is designed to provide accurate predictions based on various agricultural data inputs.</p>
+            <p id="msgpara" style="padding: 0.1% 25%">କୃଷିହେଲ୍ପ୍ କୃଷି ଉତ୍ପାଦନକୁ ସର୍ବୋତ୍ତମ ଭାବରେ କରିବା ଓ ଲାଭକାରିତା ବୃଦ୍ଧି କରିବା ପାଇଁ କୃଷକମାନେ ଟଙ୍କ ବୃହତ୍ ଅନୁଦାନ ପ୍ରଦାନ କରିବା ପାଇଁ ଏ.ଆଇ. ପ୍ରଯୁକ୍ତିକୁ ବ୍ୟବହାର କରୁଛି। ଆମର ଆପ୍ପଟି ବିଭିନ୍ନ କୃଷି ତଥ୍ୟ ଇନପୁଟ୍ ଉପରେ ଆଧାରିତ ସଠିକ୍ ପୂର୍ବାନୁମାନ ଦେବାକୁ ଡିଜାଇଁ କରାଯାଇଛି।</p>
+        </div>
+        <div class="language-selection">
+            <div style="display: flex; justify-content: center ; column-gap: 20px;  ">
+                <div class="eng">
+                    <input type="radio" name="language-selection" id="langgap" >
+                    <label for ="English">English</label>
+                </div>
+                <div class="odia">
+                    <input type="radio" name="language-selection" id="langgap" >
+                    <label for="Odia">Odia</label>
+                </div>
+            </div>
+            
+            <br>
+            <br>
+            <div class="langbtn" style="display: flex; justify-content: center;">
+            <button id="languagebtn" >Get Started</button>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Get the "Get Started" button and all language radio buttons
+const getStartedBtn = document.getElementById('languagebtn');
+const languageRadios = document.querySelectorAll('input[name="language-selection"]');
+
+// Add a click event listener to the button
+getStartedBtn.addEventListener('click', () => {
+    // Loop through the radio buttons to find the selected one
+    for (const radio of languageRadios) {
+        if (radio.checked) {
+            // Check the label associated with the radio button to determine the language
+            // Note: A better approach would be to give each radio button a 'value' attribute,
+            // but since we cannot modify the HTML, we'll use the label text.
+            const labelText = radio.nextElementSibling.textContent.trim();
+
+            if (labelText === 'English') {
+                window.location.href = 'login-english.html';
+            } else if (labelText === 'Odia') {
+                window.location.href = 'login-odia.html';
+            }
+            // Exit the loop once a selection is found
+            break;
+        }
+    }
+});
+    </script>
+</body>
+</html>
